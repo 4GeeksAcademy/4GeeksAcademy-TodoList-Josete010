@@ -1,11 +1,51 @@
-/* 
+Body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    min-width: 150px;
+    min-height: 500px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
 
-*/
+
+#complete {
+    transition: all 400ms;
+}
+
+#complete:hover {
+    transition: all 400ms;
+    background-color: greenyellow;
+}
+
+#delete {
+    transition: all 400ms;
+}
+
+#delete:hover {
+    background-color: red;
+    transition: all 400ms;
+}
+
+
+.completed {
+    text-decoration: line-through;
+}
+
+.noCompleted {
+    text-decoration: none;
+}
+
+
+.containerTask {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: lightcyan;
+    transition: all 400px;
+}
+
+.containerTaskCompleted {
+    transition: all 400px;
+    background-color: green;
+}
