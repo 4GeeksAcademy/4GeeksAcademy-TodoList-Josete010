@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Form = (handleChange, addTask, task) => {
+const Form = ({ handleChange, addTask, tarea }) => {
     return (
         <div>
             <form onSubmit={addTask}>
-                <input type="text" value={task} placeholder='Ingresa la tarea...' onChange={handleChange}/>
+                <input type="text" value={tarea} placeholder='Ingresa la tarea...' onChange={handleChange} />
+                <button type="submit">Agregar Tarea</button>
             </form>
         </div>
     )
 }
 
-export {Form}
+export { Form }

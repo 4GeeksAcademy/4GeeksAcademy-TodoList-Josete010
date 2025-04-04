@@ -1,15 +1,15 @@
 import React, { useState }  from 'react';
 
 
-const Task = ({task, deleteTask}) => {
+const Task = ({tarea, quitarTarea}) => {
     
-    const [completed, setCompleted] = useState(false)
+    const [completada, setCompletada] = useState(false)
 
     return (
-        <div className={completed ? 'containerTask containerTaskCompleted' : 'containerTask'}>
-            <h2 className={completed ? 'completed' : 'noCompleted'}>{task.task}</h2>
-            <button id='complete' onClick={() => setCompleted(!completed)}>{completed ? 'No completed' : 'Completed'}</button>
-            <button onClick={() => deleteTask(task.id)} id='delete'>Delete</button>
+        <div className={completada ? 'containerTarea containerTareaCompletada' : 'containerTarea'}>
+            <h2 className={completada ? 'completada' : 'noCompletada'}>{tarea.tarea}</h2>
+            <button id='completar' onClick={() => setCompletada(!completada)}>{completada ? 'No completada' : 'Completada'}</button>
+            <button onClick={() => quitarTarea(tarea.id)} id='eliminar'>Eliminar</button>
         </div>
     )
 }

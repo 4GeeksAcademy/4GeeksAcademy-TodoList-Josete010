@@ -1,59 +1,59 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Task } from './Task';
 import { Form } from './Form';
 
 function Todolist() {
-    const [task, setTask] = useState('');
-    const [tasks, setTasks] = useState([]);
+    const [tarea, setTarea] = useState('');
+    const [tareas, setTareas] = useState([]);
 
     const handleChange = (e) => {
-        setTask(e.target.value)
+        setTarea(e.target.value)
     }
 
     const addTask = (e) => {
         e.preventDefault();
-        if(task.trim() === ''){
+        if (tarea.trim() === '') {
             alert('Debes agregar algo')
-        return;
+            return;
         }
 
-        const newTask = {
+        const nuevaTarea = {
             id: Date.now(),
-            task, 
-            completed: false
+            tarea,
+            completada: false
         }
 
-        const totalTasks = [newTask, tasks]
-        setTasks(totalTasks);
-        setTask('')
+        const totalTareas = [nuevaTarea, ... tareas]
+        setTareas(totalTareas);
+        setTarea('')
     }
 
-    const deleteTask = (id) => {
-        const currentTasks = tasks.filter(task => {
-            return task.id !== id
+    const quitarTarea = (id) => {
+        const tareasActualizadas = tareas.filter(tarea => {
+            return tarea.id !== id
         })
-        setTasks(currentTasks)
+        setTareas(tareasActualizadas)
     }
 
     return (
         <>
-        <h2>todos</h2>
-        <Form 
-         handleChange = {handleChange}
-         addTask = {addTask}
-         task = {task}
-        />
-        {tasks.length > 1 && (
-            <button onClick={() => setTasks([])}>Empty tasks</button>
-        )}
-        {tasks.map(task => (
-        <Task 
-          key = {task.id}
-          id = {task.id}
-          task = {task}
-          deleteTask = {deleteTask}
-        />
-    ))}
+            <h2>todos</h2>
+            <Form
+                handleChange = {handleChange}
+                addTask={addTask}
+                tarea = {tarea}
+            />
+            {tareas.length > 1 && (
+                <button onClick={() => setTareas([])}>Vaciar tareas</button>
+            )}
+            {tareas.map(tarea => (
+                <Task
+                    key= {tarea.id}
+                    id= {tarea.id}
+                    tarea= {tarea}
+                    quitarTarea= {quitarTarea}
+                />
+            ))}
         </>
     )
 }

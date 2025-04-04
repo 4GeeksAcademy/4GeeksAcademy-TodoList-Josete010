@@ -9,35 +9,35 @@ Body {
 
 
 
-#complete {
+#completar {
     transition: all 400ms;
 }
 
-#complete:hover {
+#completar:hover {
     transition: all 400ms;
     background-color: greenyellow;
 }
 
-#delete {
+#eliminar {
     transition: all 400ms;
 }
 
-#delete:hover {
+#eliminar:hover {
     background-color: red;
     transition: all 400ms;
 }
 
 
-.completed {
+.completada {
     text-decoration: line-through;
 }
 
-.noCompleted {
+.noCompletada {
     text-decoration: none;
 }
 
 
-.containerTask {
+.containerTarea {
     padding: 5px;
     border-radius: 10px;
     margin: 10px;
@@ -45,7 +45,7 @@ Body {
     transition: all 400px;
 }
 
-.containerTaskCompleted {
+.containerTareaCompletada {
     transition: all 400px;
     background-color: green;
 }
